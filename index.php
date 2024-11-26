@@ -24,9 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['login'])) {
     
     // Consulta para verificar o login
     $sql = "SELECT Email FROM Cliente WHERE Email = '$email' AND Senha = '$senha'";
-    echo $senha;
     $result = $conn->query($sql);
-    echo $result->num_rows;
     if ($result->num_rows > 0) {
         // Login bem-sucedido, cria sessão
         $_SESSION['logado'] = true;
